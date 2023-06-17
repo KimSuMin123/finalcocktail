@@ -1,0 +1,11 @@
+.IngredientDetail{
+    display: flex;
+    margin-top: 50px;
+    width: 800px;
+    overflow: hidden;
+    display: flex;
+}
+#IngredientDetailimg{
+    object-fit: contain;
+    flex: none;
+}

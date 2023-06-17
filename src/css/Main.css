@@ -1,0 +1,71 @@
+.Headermodel{
+    display: flex;
+    margin-top: 50px;
+}
+#Headerlogo{
+    width: 100px;
+    margin-left: 150px;
+}
+#Headerbuttonone{
+    margin-left: 100px;
+    background-color: transparent;
+    border: 1px solid;
+}
+
+#Headerbuttontwo{
+    margin-left: 150px;
+    background-color: transparent;
+    border: 1px solid;
+}
+#Headerbuttonthree{
+    margin-left: 400px;
+    margin-top: 50px;
+    background-color: transparent;
+    border: 1px solid;
+}
+#Mbtiresult1{
+    font-size: 30px;
+    text-align: center;
+    color: slategray;
+}
+#Mbtiresult2{
+    font-size: 20px;
+    text-align: center;
+    color: slategray;
+}
+.Mbtiresult{
+    display: flex;
+}
+.MbtiresultLpic{
+    margin-left: 250px;
+    width: 600px;
+    height: 600px;
+}
+.Mbtiresultr{
+    margin-left: 100px;
+    width: 500px;
+}
+.Mbtiresultpic{
+    display: flex;
+}
+#Mbtiresultpic1{
+    width: 250px;
+    height: 200px;
+    background-color: lightgray;
+    text-align: center;
+    margin-left: 50px;
+}
+#Mbtiresultpic{
+    width: 150px;
+    margin-top: 20px;
+}
+#MbtiresultButton2{
+    margin-left: 50px;
+}
+#MbtiresultButton1{
+    margin-left: 180px;
+}
+#tableone{
+    border: 1px solid;
+    margin-left: 110px;
+}

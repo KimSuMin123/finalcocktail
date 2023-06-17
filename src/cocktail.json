@@ -1,0 +1,83 @@
+{"cocktail" : [
+	{
+		"cvsId" : 1,
+		"cvsName" : "우쭈쭈메로니",
+		"cvsIngredients" : "메로나,사이다,소주",
+		"cvsInstruction" : "메로나 막대가 위로 향하도록 컵에 넣는다.소주와 사이다를 1:3 비율로 섞는다.메로나를 저어 소다크림을 만든다",
+		"cvsTheme" : "1,3,1.5",
+		"cvsdate" : "2023-05-13"
+	},
+	{
+		"cvsId" : 2,
+		"cvsName" : "밀키스 블루레모네이드",
+		"cvsIngredients" : "블루레모네이드,밀키스,소주",
+		"cvsInstruction" : "밀키스를 붓는다.블루레모네이드를 조심조심 붓는다.소주를 따른다",
+		"cvsTheme" : "1.5,3,1.5",
+		"cvsdate" : "2023-05-13"
+	},
+	{
+		"cvsId" : 3,
+		"cvsName" : "스크류키스",
+		"cvsIngredients" : "스크류바,사이다,소주",
+		"cvsInstruction" : "스크류바 막대가 위로 향하도록 컵에 넣는다.소주와 사이다를 1:3 비율로 섞는다",
+		"cvsTheme" : "1,3,1.5",
+		"cvsdate" : "2023-05-13"
+	},
+	{
+		"cvsId" : 4,
+		"cvsName" : "죠스바주",
+		"cvsIngredients" : "죠스바,사이다,소주,얼음,크루저(선택)",
+		"cvsInstruction" : "죠스바 막대가 위로 향하도록 컵에 넣는다.소주와 사이다,크루저를 1:3:0.5 비율로 섞는다",
+		"cvsTheme" : "1,3,1.5",
+		"cvsdate" : "2023-05-13"
+	},
+	{
+		"cvsId" : 5,
+		"cvsName" : "탱크보이소주",
+		"cvsIngredients" : "탱크보이,사이다,소주",
+		"cvsInstruction" : "탱크보이를 엎어서 컵에 넣는다.소주와 사이다를 1:3 비율로 섞는다",
+		"cvsTheme" : "1,3,1.5",
+		"cvsdate" : "2023-05-13"
+	},
+	{
+		"cvsId" : 6,
+		"cvsName" : "더티호",
+		"cvsIngredients" : "호가든,기네스",
+		"cvsInstruction" : "호가든 반잔을 거품이 나도록 붓는다.뒤집은 숟가락 위로 기네스 반을 조심조심 따른다",
+		"cvsTheme" : "3,3,1",
+		"cvsdate" : "2023-05-13"
+	},
+	{
+		"cvsId" : 7,
+		"cvsName" : "레드아이",
+		"cvsIngredients" : "토마토주스,맥주(라거),계란노른자(선택)",
+		"cvsInstruction" : "토마토 주스를 반잔 따른다,라거맥주를 거품이 나도록 반잔 따른다.기호에 따라 노른자를 살포시 얹는다",
+		"cvsTheme" : "1.5,2,2",
+		"cvsdate" : "2023-05-13"
+	},
+	{
+		"cvsId" : 8,
+		"cvsName" : "오렌지블랑",
+		"cvsIngredients" : "오렌지주스,블랑",
+		"cvsInstruction" : "오렌지 주스를 반잔 붓는다.거품이 적당히 나도록 블랑을 따른다",
+		"cvsTheme" : "1,3,1.5",
+		"cvsdate" : "2023-05-13"
+	},
+	{
+		"cvsId" : 9,
+		"cvsName" : "세미 섹스온더비치",
+		"cvsIngredients" : "보드카,이프로,오렌지주스,얼음,크랜베리주스",
+		"cvsInstruction" : "컵에 얼음을 넣고 젓가락으로 휘젓는다.녹은 물은 버리고 보드카를 따른다.이프로, 오렌지주스,크랜베리주스를 넣고 섞어준다",
+		"cvsTheme" : "1.5,3,3",
+		"cvsdate" : "2023-05-13"
+	},
+	{
+		"cvsId" : 10,
+		"cvsName" : "예거밤",
+		"cvsIngredients" : "얼음,핫식스,예거마이스터",
+		"cvsInstruction" : "컵에 얼음을 넣고 젓가락으로 휘젓는다.녹은 물은 버리고 핫식스 반잔을 따른다.예거마이스터를 따르고 잘 섞어준다",
+		"cvsTheme" : "1.5,0,2.5",
+		"cvsdate" : "2023-05-13"
+	}
+]
+}
