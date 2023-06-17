@@ -1,10 +1,11 @@
 .Headermodel{
     display: flex;
-    margin-top: 50px;
+    padding-top: 50px;
 }
 #Headerlogo{
     width: 100px;
     margin-left: 150px;
+    border-radius: 10%;
 }
 #Headerbuttonone{
     margin-left: 100px;

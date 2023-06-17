@@ -1,60 +1,55 @@
-import { useState } from "react";
-import { Link, NavLink, Route, Routes, useNavigate } from "react-router-dom";
+import React, { useState } from 'react';
+import axios from 'axios';
 
-function Login() {
-  let [loginId, setLoginId] = useState("");
-  let [loginPassword, setLoginPassword] = useState("");
-  let [savedLoginId, setSavedLoginId] = useState("");
-  let [savedLoginPassword, setSavedLoginPassword] = useState("");
+const Login = () => {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [token, setToken] = useState('');
 
-  const navigate = useNavigate();
-  const navigateToPurchase1 = () => {
-    navigate("/");
+  const handleUsernameChange = (e) => {
+    setUsername(e.target.value);
   };
-  const navigateToPurchase2 = () => {
-    navigate("/Join");
+
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
+  };
+
+  const handleLogin = async () => {
+    try {
+      const response = await axios.post('https://example.com/login', {
+        username: username,
+        password: password
+      });
+      const token = response.data.token;
+      setToken(token);
+    } catch (error) {
+      console.error('Error logging in:', error);
+    }
+  };
+
+  const handleLogout = () => {
+    setToken('');
   };
 
   return (
     <div>
       <div>
-        ID :{" "}
-        <input
-          type="text"
-          size={20}
-          onChange={(e) => {
-            setLoginId(e.target.value);
-          }}
-        />
+        <label htmlFor="username">Username: </label>
+        <input type="text" id="username" value={username} onChange={handleUsernameChange} />
       </div>
       <div>
-        PW :{" "}
-        <input
-          type="password"
-          size={20}
-          onChange={(e) => {
-            setLoginPassword(e.target.value);
-          }}
-        />
+        <label htmlFor="password">Password: </label>
+        <input type="password" id="password" value={password} onChange={handlePasswordChange} />
       </div>
-
       <div>
-        <button
-          onClick={() => {
-            window.localStorage.setItem("loginId", loginId);
-            window.localStorage.setItem("loginPassword", loginPassword);
-
-            setSavedLoginId(window.localStorage.getItem("loginId"));
-            setSavedLoginPassword(window.localStorage.getItem("loginPassword"));
-          }}
-        >
-          <button onClick={navigateToPurchase1}>로그인</button>
-        </button>
-        
-        <button onClick={navigateToPurchase2}>회원가입</button>
+        {token ? (
+          <button onClick={handleLogout}>Logout</button>
+        ) : (
+          <button onClick={handleLogin}>Login</button>
+        )}
       </div>
     </div>
   );
-}
+};
 
 export default Login;

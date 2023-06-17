@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from "react-router-dom";
 import Header from './Header';
+import '../css/Recommend.css';
 
 function RecommendStart () {
 
@@ -14,20 +15,22 @@ function RecommendStart () {
     return(
         <div>
             <Header/>
-            <p>
-                MBTI 기반으로<br/>
-                칵테일 추천
-                <button id='mbtistartbutton' onClick={Mbtistart}>
-                    Start
-                </button>
-            </p>
-            <p>
-                좋아하는 재료 기반으로<br/>
-                칵테일 추천
-                <button id='IngredientStartbutton' onClick={IngredientStart}>
-                    Start
-                </button>
-            </p>
+            <div class='RecommendAll'>
+                <p id = "RecommendBack"> 
+                    MBTI 기반으로<br/>
+                    칵테일 추천<br/>
+                    <button id='Recommendbutton' onClick={Mbtistart}>
+                        →
+                    </button>
+                </p>
+                <p id = "RecommendBack">
+                    좋아하는 재료 기반으로<br/>
+                    칵테일 추천<br/>
+                    <button id='Recommendbutton' onClick={IngredientStart}>
+                        →
+                    </button>
+                </p>
+            </div>
         </div>
     )
 }
