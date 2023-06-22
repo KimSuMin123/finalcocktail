@@ -4,11 +4,16 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import CocktailDetail from './pages/CocktailDetail';
+import MyComponent from './pages/Mycomponent';
+import MbtiTest from './pages/MbtiTest';
+import Join from './pages/Join';
+import Login from './pages/Login';
+import Main from './pages/Main';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App/>
+    <Main/>
    </React.StrictMode>
 );
 

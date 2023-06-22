@@ -70,3 +70,11 @@
     border: 1px solid;
     margin-left: 110px;
 }
+#MainImg{
+    height: 30px;
+}
+td{
+    border: solid 1px;
+    width: 200px;
+    height: 30px;
+}

@@ -1,94 +1,81 @@
-import { useState } from "react";
-import { Link, NavLink, Route, Routes } from "react-router-dom";
-import JoinOk from "./JoinOk";
+import React, { useState } from 'react';
+import axios from 'axios';
 
-function Join() {
-  let [JoinName, setJoinName] = useState("");
-  let [JoinAge, setJoinAge] = useState("");
-  let [JoinId, setJoinId] = useState("");
-  let [JoinPassword, setJoinPassword] = useState("");
-  let [JoinMessege, setJoinMessege] = useState("");
-  let [savedJoinName, setSavedJoinName] = useState("");
-  let [savedJoinAge, setSavedJoinAge] = useState("");
-  let [savedJoinId, setSavedJoinId] = useState("");
-  let [savedJoinPassword, setSavedJoinPassword] = useState("");
-  let [savedJoinMessege, setSavedJoinMessege] = useState("");
+const Join = () => {
+  const [uid, setuId] = useState('');
+  const [password, setPassword] = useState('');
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+
+  const handleJoin = () => {
+    const userData = {
+      id: uid,
+      password,
+      name,
+      email,
+      role: "user"
+    };
+
+    const queryString = Object.keys(userData)
+      .map(key => `${key}=${encodeURIComponent(userData[key])}`)
+      .join('&');
+
+    const url = `http://3.39.190.51:8080/sign-api/sing-up?${queryString}`;
+
+    axios.post(url)
+      .then(response => {
+        // 회원가입 성공 처리
+        console.log('회원가입 성공:', response.data);
+      })
+      .catch(error => {
+        // 회원가입 실패 처리
+        console.error('회원가입 실패:', error.response);
+        if (error.response.status === 401) {
+          setErrorMessage('올바른 인증 정보를 제공해야 합니다.');
+          // 인증 오류 처리 로직 추가
+        } else {
+          setErrorMessage('서버 오류: 요청에 문제가 있습니다.');
+          // 기타 서버 오류 처리 로직 추가
+        }
+      });
+  };
 
   return (
-    <>
-      <div>
-        Name :{" "}
-        <input
-          type="text"
-          size={20}
-          onChange={(e) => {
-            setJoinName(e.target.value);
-          }}
-        />
-      </div>
-      <div>
-        Age :{" "}
-        <input
-          type="text"
-          size={20}
-          onChange={(e) => {
-            setJoinAge(e.target.value);
-          }}
-        />
-      </div>
-      <div>
-        ID :{" "}
-        <input
-          type="text"
-          size={20}
-          onChange={(e) => {
-            setJoinId(e.target.value);
-          }}
-        />
-      </div>
-      <div>
-        PW :{" "}
-        <input
-          type="password"
-          size={20}
-          onChange={(e) => {
-            setJoinPassword(e.target.value);
-          }}
-        />
-      </div>
-      <div>
-        Messege :{" "}
-        <input
-          type="text"
-          size={20}
-          onChange={(e) => {
-            setJoinMessege(e.target.value);
-          }}
-        />
-      </div>
-
-      <div>
-        <button
-          onClick={() => {
-            window.localStorage.setItem("JoinName", JoinName);
-            window.localStorage.setItem("JoinAge", JoinAge);
-            window.localStorage.setItem("JoinId", JoinId);
-            window.localStorage.setItem("JoinPassword", JoinPassword);
-            window.localStorage.setItem("JoinMessege", JoinMessege);
-
-            setSavedJoinName(window.localStorage.getItem("JoinName"));
-            setSavedJoinAge(window.localStorage.getItem("JoinAge"));
-            setSavedJoinId(window.localStorage.getItem("JoinId"));
-            setSavedJoinPassword(window.localStorage.getItem("JoinPassword"));
-            setSavedJoinMessege(window.localStorage.getItem("JoinMessege"));
-          }}
-        >
-          <NavLink to="/JoinOk">회원가입</NavLink>
-        </button>
-      </div>
-      <div>{JSON.stringify(localStorage)}</div>
-    </>
+    <div>
+      <h2>회원가입</h2>
+      {errorMessage && <p>{errorMessage}</p>}
+      아이디 : 
+      <input
+        type="text"
+        placeholder="아이디"
+        value={uid}
+        onChange={e => setuId(e.target.value)}
+      /><br/>
+      비밀번호 : 
+      <input
+        type="password"
+        placeholder="비밀번호"
+        value={password}
+        onChange={e => setPassword(e.target.value)}
+      /><br/>
+      이름 : 
+      <input
+        type="text"
+        placeholder="이름"
+        value={name}
+        onChange={e => setName(e.target.value)}
+      /><br/>
+      이메일 : 
+      <input
+        type="email"
+        placeholder="이메일"
+        value={email}
+        onChange={e => setEmail(e.target.value)}
+      /><br/>
+      <button onClick={handleJoin}>가입하기</button>
+    </div>
   );
-}
+};
 
 export default Join;
