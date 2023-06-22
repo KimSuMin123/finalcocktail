@@ -16,12 +16,13 @@ import Login from "./pages/Login";
 import MbtiTest from "./pages/MbtiTest";
 import Randomdetail from "./pages/Randomdetail";
 import Header from "./pages/Header";
+import Board from "./pages/Board";
+
 
 function App() {
   return (
     <div id="App">
       <BrowserRouter>
-      <Header/>
         <Routes>
           <Route path="/Main" element={<Main />} />
           <Route path="/Mbtistart" element={<Mbtistart />} />
@@ -37,6 +38,7 @@ function App() {
           <Route path="/IngredientDetail" element={<IngredientDetail />} />
           <Route path="/MbtiTest" element={<MbtiTest />} />
           <Route path="/Randomdetail" element={<Randomdetail />} />
+          <Route path="/Board" element={<Board/>}/>
         </Routes>
       </BrowserRouter>
     </div>

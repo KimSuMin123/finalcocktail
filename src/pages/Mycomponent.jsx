@@ -1,46 +1,42 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
-function MyComponent() {
-  const [users, setUsers] = useState(null);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
+const MyComponent = () => {
+  const [data, setData] = useState(null);
+  const token = localStorage.getItem('token');
 
   useEffect(() => {
-    const fetchUsers = async () => {
+    const fetchData = async () => {
       try {
-        // 요청이 시작 할 때에는 error 와 users 를 초기화하고
-        setError(null);
-        setUsers(null);
-        // loading 상태를 true 로 바꿉니다.
-        setLoading(true);
-        const response = await axios.get(
-          'http://3.39.190.51:8080/mbti/list'
-        );
-        setUsers(response.data); // 데이터는 response.data 안에 들어있습니다.
-      } catch (e) {
-        setError(e);
+        const response = await axios.get('http://3.39.190.51:8080/order/listByUserId?uId=user1', {
+          headers: {
+            'X-AUTH-TOKEN': token
+          }
+        });
+        setData(response.data);
+      } catch (error) {
+        console.error(error);
       }
-      setLoading(false);
     };
 
-    fetchUsers();
-  }, []);
+    if (token) {
+      fetchData();
+    }
+  }, [token]);
 
-  if (loading) return <div>로딩중..</div>;
-  if (error) return <div>에러가 발생했습니다</div>;
-  if (!users) return null;
   return (
-    <ul>
-      {users.map(user => (
-        <li key={user.number}>
-          {user.mbti}{user.name}{user.keyword}{user.ex}
-          {user.best}{user.worst}
-          <img src={user.url}></img>
-        </li>
-      ))}
-    </ul>
+    <div>
+      {data ? (
+        <ul>
+          {data.map((item) => (
+            <li key={item.id}>{item.productName}</li>
+          ))}
+        </ul>
+      ) : (
+        <p>Loading data...</p>
+      )}
+    </div>
   );
-}
+};
 
 export default MyComponent;

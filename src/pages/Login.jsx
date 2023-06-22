@@ -1,12 +1,17 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+
 
 const Join = () => {
   const [id, setId] = useState('');
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
-
+  const navigate = useNavigate();
   const handleJoin = () => {
+    navigate("/Join");
+  };
+  const handleLogin = () => {
     const queryString = `http://3.39.190.51:8080/sign-api/sing-in?id=${encodeURIComponent(id)}&password=${encodeURIComponent(password)}`;
 
     axios.post(queryString)
@@ -15,6 +20,8 @@ const Join = () => {
         console.log('로그인 성공:', response.data);
         const token = response.data.token;
         localStorage.setItem('token', token);
+        localStorage.setItem('UserId', id);
+        navigate("/");
       })
       .catch(error => {
         // 로그인 실패 처리
@@ -42,7 +49,8 @@ const Join = () => {
         value={password}
         onChange={e => setPassword(e.target.value)}
       /><br/>
-      <button onClick={handleJoin}>로그인</button>
+      <button onClick={handleLogin}>로그인</button>
+      <button onClick={handleJoin}>회원가입</button>
     </div>
   );
 };

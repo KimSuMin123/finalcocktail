@@ -1,6 +1,7 @@
 #App {
-  width: 1706px;
-  height: 9000px;
+  width: 1690px;
+  height: 1800px;
   background-image: url('../src/img/back.png');
-  background-size: 'cover';
+  background-repeat: no-repeat;
+  background-size: 1690px 1800px;
 }

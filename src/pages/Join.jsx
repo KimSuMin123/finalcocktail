@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const Join = () => {
   const [uid, setuId] = useState('');
@@ -7,7 +8,10 @@ const Join = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
-
+  const navigate = useNavigate();
+  const handleJoinOk = () => {
+    navigate("/JoinOk");
+  };
   const handleJoin = () => {
     const userData = {
       id: uid,
@@ -27,6 +31,7 @@ const Join = () => {
       .then(response => {
         // 회원가입 성공 처리
         console.log('회원가입 성공:', response.data);
+        handleJoinOk();
       })
       .catch(error => {
         // 회원가입 실패 처리

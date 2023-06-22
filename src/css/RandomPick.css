@@ -1,5 +1,9 @@
 #RandomImg{
   width: 500px;  
-  width: 500px; 
+  height: 500px; 
   margin-top: 20px;
 }
+.RandomAll{
+  margin-left: 500px;
+}
+
