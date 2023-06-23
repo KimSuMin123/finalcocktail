@@ -1,7 +1,5 @@
 #App {
-  width: 1690px;
+  background-image: url('../src/img/back.jfif');
+  width: auto;
   height: 1800px;
-  background-image: url('../src/img/back.png');
-  background-repeat: no-repeat;
-  background-size: 1690px 1800px;
 }

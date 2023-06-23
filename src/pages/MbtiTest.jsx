@@ -81,15 +81,18 @@ function MbtiTest () {
 
     return (
       <div>
-        <h3>질문 {counter + 1}</h3>
-        <p>{currentQuestion.question}</p>
+        <Header/>
+        <div id="Mbtistart">
+        <h3 id="MbtistartTxt">질문 {counter + 1}</h3>
+        <p id="MbtistartTxt">{currentQuestion.question}</p>
 
         <div>
           {currentQuestion.choices.map((choice, index) => (
-            <button key={index} onClick={() => handleAnswer(choice)}>
+            <button id="MbtiButton" key={index} onClick={() => handleAnswer(choice)}>
               {choice}
             </button>
           ))}
+        </div>
         </div>
       </div>
     );
@@ -134,10 +137,12 @@ function MbtiTest () {
     return (
       <div>
         <Header/>
-        <h3>검사 결과</h3>
-        <p>당신의 MBTI 유형은: {mbtiResult}</p>
-        <button id='MbtiresultButton1' onClick={Mbtistart}>다시하기</button>
-        <button id='MbtiresultButton2' onClick={Mbtisave}>자세히 보기</button>
+        <div id = "Mbtistart">
+        <h3 id="MbtistartTitle">검사 결과</h3>
+        <p id="MbtistartTxt">당신의 MBTI 유형은: {mbtiResult}</p>
+        <button id="MbtiButton" onClick={Mbtistart}>다시하기</button>
+        <button id="MbtiButton1" onClick={Mbtisave}>자세히 보기</button>
+        </div>
       </div>
     );
   };

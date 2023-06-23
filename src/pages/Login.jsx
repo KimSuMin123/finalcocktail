@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import Header from './Header';
+import "../css/Login.css"
 
 
 const Join = () => {
@@ -33,11 +35,14 @@ const Join = () => {
 
   return (
     <div>
-      <h2>로그인</h2>
+      <Header/>
+      <div id= "LoginAll">
+      <h2 id = "Logintitle">로그인</h2>
       {errorMessage && <p>{errorMessage}</p>}
-      아이디:
+      아이디:<br/>
       <input
         type="text"
+        id = "LoginId"
         placeholder="아이디"
         value={id}
         onChange={e => setId(e.target.value)}
@@ -45,12 +50,14 @@ const Join = () => {
       비밀번호:
       <input
         type="password"
+        id = "Loginpw"
         placeholder="비밀번호"
         value={password}
         onChange={e => setPassword(e.target.value)}
       /><br/>
-      <button onClick={handleLogin}>로그인</button>
-      <button onClick={handleJoin}>회원가입</button>
+      <button onClick={handleLogin} id = "LoginButton">로그인</button>
+      <button onClick={handleJoin} id = "SignupButton">회원가입</button>
+    </div>
     </div>
   );
 };

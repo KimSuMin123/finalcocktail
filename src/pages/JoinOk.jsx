@@ -1,13 +1,21 @@
 import { useState } from "react";
-import { Link, NavLink, Route, Routes } from "react-router-dom";
-
+import { Link, NavLink, Route, Routes, useNavigate } from "react-router-dom";
+import'../css/Login.css';
+import Header from "./Header";
 
 function JoinOk() {
+  const navigate = useNavigate();
+  const handleLogin = () => {
+    navigate("/Login");
+  };
   const userName = window.localStorage.getItem("UserId");
   return (
     <div>
-      {userName}님 회원가입을 축하드립니다.
-      <NavLink to="/Login">로그인 하러 가기</NavLink>
+      <Header/>
+      <div id = "Joinokall">
+        {userName}님<br/> 회원가입을 축하드립니다.<br/>
+        <button id = "JoinButton" onClick={handleLogin}>로그인 하러 가기</button>
+      </div>
     </div>
   );
 }

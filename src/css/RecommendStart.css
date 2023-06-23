@@ -1,0 +1,33 @@
+.RecommendAll{
+    display: flex;
+}
+
+#RecommendBack1{
+    width: 350px;
+  height: 300px; 
+  margin-left: 500px;
+  margin-right: 100px;
+  color: #8DE529;
+    background-color: #202020;
+    font-family: 'bitbit', Arial, sans-serif;
+    text-align: center;
+    font-size: 50px;
+    padding-top: 50px;
+}
+#RecommendBack2{
+    width: 350px;
+  height: 300px; 
+  
+  color: #8DE529;
+    background-color: #202020;
+    font-family: 'bitbit', Arial, sans-serif;
+    text-align: center;
+    font-size: 50px;
+    padding-top: 50px;
+}
+
+#Recommendbutton{
+    color: #8DE529;
+    background-color: #202020;
+    font-size: 30px;
+}

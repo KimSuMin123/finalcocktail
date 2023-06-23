@@ -36,8 +36,8 @@ const Map = () => {
 
   return (
     <div>
-        <p>키워드로 장소 검색</p>
-        <div id="map" style={{ width: '500px', height: '500px' }}></div>
+        <p>편의점 위치 보기</p>
+        <div id="map" style={{ width: '200px', height: '200px' }}></div>
     </div>
     );
 };

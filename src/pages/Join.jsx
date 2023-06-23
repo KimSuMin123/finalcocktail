@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-
+import Header from './Header';
+import'../css/Login.css';
 const Join = () => {
   const [uid, setuId] = useState('');
   const [password, setPassword] = useState('');
@@ -49,37 +50,44 @@ const Join = () => {
 
   return (
     <div>
-      <h2>회원가입</h2>
+      <Header/>
+      <div id= "JoinAll">
+      <h2 id = "Jointitle">회원가입</h2>
       {errorMessage && <p>{errorMessage}</p>}
-      아이디 : 
+      아이디 : <br/>
       <input
         type="text"
+        id = "JoinId"
         placeholder="아이디"
         value={uid}
         onChange={e => setuId(e.target.value)}
       /><br/>
-      비밀번호 : 
+      비밀번호 : <br/>
       <input
         type="password"
+        id = "Joinpw"
         placeholder="비밀번호"
         value={password}
         onChange={e => setPassword(e.target.value)}
       /><br/>
-      이름 : 
+      이름 : <br/>
       <input
         type="text"
+        id = "Joinname"
         placeholder="이름"
         value={name}
         onChange={e => setName(e.target.value)}
       /><br/>
-      이메일 : 
+      이메일 : <br/>
       <input
         type="email"
+        id = "Joinemail"
         placeholder="이메일"
         value={email}
         onChange={e => setEmail(e.target.value)}
       /><br/>
-      <button onClick={handleJoin}>가입하기</button>
+      <button id = "JoinButton" onClick={handleJoin}>가입하기</button>
+    </div>
     </div>
   );
 };

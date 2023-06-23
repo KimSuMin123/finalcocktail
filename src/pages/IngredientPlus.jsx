@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import Header from './Header';
+import"../css/ingredient.css"
 
 const Mycomponent = () => {
   const [data, setData] = useState('');
@@ -55,23 +56,19 @@ const Mycomponent = () => {
       <Header />
       {data ? (
         <table>
-          <thead>
-            <tr>
-              <th>url</th>
-              <th>Name</th>
-            </tr>
-          </thead>
           <tbody>
-            {data.map((item) => (
-              <tr key={item.number}>
-                <td><img src={item.url} width="30px" alt="ingredient" /></td>
-                <td>{item.name}</td>
-                <td>
-                  <button onClick={() => handleRequest(item.name)}>등록하기</button>
-                </td>
-              </tr>
-            ))}
-          </tbody>
+  <div className="card-container">
+    {data.map((item) => (
+      <tr key={item.number}>
+        <td><img id = "ingredientImg" src={item.url} width="50px" height="50px" alt="ingredient" /></td>
+        <td id = "ingredientTxt">{item.name}</td>
+        <td>
+          <button id = "ingredientButton1" onClick={() => handleRequest(item.name)}>등록하기</button>
+        </td>
+      </tr>
+    ))}
+  </div>
+</tbody>
         </table>
       ) : (
         <p>Loading data...</p>

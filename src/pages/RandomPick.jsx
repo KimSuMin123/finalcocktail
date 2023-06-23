@@ -44,11 +44,13 @@ const handleRefresh = () => {
       <div class="RandomAll">
         <h1 id="RandomName">랜덤 칵테일 추천</h1>
         {randomComponent && (
-          <div>
+          <div >
             <img id="RandomImg" src={randomComponent.url}></img>
-            <h2>{randomComponent.name}</h2>
-            <button id='MbtiresultButton2' onClick={handleRefresh}>다시 추천받기</button>
-            <button id='MbtiresultButton2' onClick={Randomdetail}>자세히 보기</button>
+            <h2 id="RandomText">{randomComponent.name}</h2>
+           <div id = "RamdomButton">
+           <button id='RandomButton1' onClick={handleRefresh}>다시 추천받기</button>
+            <button id='RandomButton2' onClick={Randomdetail}>자세히 보기</button>
+</div>
           </div>
         )}
       </div>

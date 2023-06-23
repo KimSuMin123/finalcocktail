@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Header from './Header';
-import Mycomponent from './Mycomponent';
 import { useNavigate } from 'react-router-dom';
 import BoardPlus from './BoardPlus';
 

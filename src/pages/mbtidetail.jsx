@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Header from './Header';
+import '../css/Mbti.css';
+import Map from './map';
 
 const MbtiDetial = () => {
   const [mbtiData, setMbtiData] = useState(null);
@@ -21,21 +23,29 @@ const MbtiDetial = () => {
   return (
     <div>
       <Header/>
-      <h3>MBTI Result</h3>
+      <div id="Mbtistart">
+      <h3 id = "MbtistartTitle">MBTI Result</h3>
       {mbtiData ? (
-        <div>
-          <p>Number: {mbtiData.number}</p>
-          <p>MBTI: {mbtiData.mbti}</p>
-          <p>Name: {mbtiData.name}</p>
-          <p>Keyword: {mbtiData.keyword}</p>
-          <p>Explanation: {mbtiData.ex}</p>
-          <p>Best: {mbtiData.best}</p>
-          <p>Worst: {mbtiData.worst}</p>
-          <img src={mbtiData.url} alt="MBTI Image" />
+        <div id="MbtistartTxt1">
+          <div id="MbtistartTxt3">
+          <img id="MbtistartImg" src={mbtiData.url} alt="MBTI Image" />
+          <div id= "mbtimap"><Map/></div>
+          </div>
+          <div id = "MbtistartTxt2">
+          <p>Number: {mbtiData.number}<br/></p>
+          <p>MBTI: {mbtiData.mbti}<br/></p>
+          <p>Name: {mbtiData.name}<br/></p>
+          <p>Keyword: {mbtiData.keyword}<br/></p>
+          <p>Explanation: {mbtiData.ex}<br/></p>
+          <p>Best: {mbtiData.best}<br/></p>
+          <p>Worst: {mbtiData.worst}<br/></p>
+          </div>
         </div>
       ) : (
-        <p>Loading...</p>
+        <p id="MbtistartTxt">Loading...</p>
       )}
+
+      </div>
     </div>
   );
 };

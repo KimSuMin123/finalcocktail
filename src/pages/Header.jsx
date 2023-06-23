@@ -1,5 +1,6 @@
 import Logo from "../img/logo.png";
 import { useNavigate } from "react-router-dom";
+import "../css/Header.css";
 
 function Header() {
   const navigate = useNavigate();
@@ -57,8 +58,7 @@ function Header() {
         게시판
       </button>
       {token ? ( 
-        <div>
-          <span id="welcomeMessage">{`${UserId}님 환영합니다.`}</span>
+        <div id = "SLogin">
           <button id="Headerbuttonthree" onClick={handleLogout}>
             로그아웃
           </button>

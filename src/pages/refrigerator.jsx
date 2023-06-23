@@ -36,15 +36,17 @@ const Refrigerator = () => {
       <Header/>
     {data ? (
       <table>
-        <tbody>
-          {data.map((item) => (
-            <tr key={item.id}>
-              <tr><img src={item.url} width="20px"></img></tr>
-              <tr>{item.productName}</tr>
-            </tr>
-          ))}
-          <button onClick={handleIngredientPlus}>재료 추가하기</button>
-        </tbody>
+        <tbody className="card-container">
+  {data.map((item) => (
+    <tr key={item.id}>
+      <td>
+        <img id = "ingredientImg" src={item.url} width="50px" height="50px" alt="ingredient" />
+      </td>
+      <td id = "ingredientTxt">{item.productName}</td>
+    </tr>
+  ))}
+</tbody>
+<button id = "ingredientButton"onClick={handleIngredientPlus}>재료 추가하기</button>
       </table>
     ): (
       <p>로그인 후 이용해주세요!!</p>
