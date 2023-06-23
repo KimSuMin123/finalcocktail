@@ -17,6 +17,7 @@ import MbtiTest from "./pages/MbtiTest";
 import Randomdetail from "./pages/Randomdetail";
 import Header from "./pages/Header";
 import Board from "./pages/Board";
+import Mycomponent from "./pages/Mycomponent";
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
     <div id="App">
       <BrowserRouter>
         <Routes>
+          <Route path="/My" element={<Mycomponent/>}/>
           <Route path="/Main" element={<Main />} />
           <Route path="/Mbtistart" element={<Mbtistart />} />
           <Route path="/Mbtiresult" element={<Mbtiresult />} />

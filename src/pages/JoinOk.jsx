@@ -3,7 +3,7 @@ import { Link, NavLink, Route, Routes } from "react-router-dom";
 
 
 function JoinOk() {
-  const userName = window.localStorage.getItem("JoinName");
+  const userName = window.localStorage.getItem("UserId");
   return (
     <div>
       {userName}님 회원가입을 축하드립니다.

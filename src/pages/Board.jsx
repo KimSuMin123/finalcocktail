@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Header from './Header';
+import Mycomponent from './Mycomponent';
 
 const Board = () => {
   const [data, setData] = useState(null);

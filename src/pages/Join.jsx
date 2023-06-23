@@ -31,6 +31,7 @@ const Join = () => {
       .then(response => {
         // 회원가입 성공 처리
         console.log('회원가입 성공:', response.data);
+        localStorage.setItem('UserId', uid);
         handleJoinOk();
       })
       .catch(error => {

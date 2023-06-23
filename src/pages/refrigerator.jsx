@@ -2,14 +2,15 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Header from './Header';
 
-const MyComponent = () => {
+const Refrigerator = () => {
   const [data, setData] = useState(null);
   const token = localStorage.getItem('token');
+  const userId = localStorage.getItem('UserId'); // Fetch userId from localStorage
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://3.39.190.51:8080/order/listByUserId?uId=user1', {
+        const response = await axios.get(`http://3.39.190.51:8080/order/listByUserId?uId=${userId}`, {
           headers: {
             'X-AUTH-TOKEN': token
           }
@@ -20,10 +21,10 @@ const MyComponent = () => {
       }
     };
 
-    if (token) {
+    if (token && userId) { // Check if both token and userId exist
       fetchData();
     }
-  }, [token]);
+  }, [token, userId]); // Include userId in the dependency array
 
   return (
     <div>
@@ -47,4 +48,4 @@ const MyComponent = () => {
   );
 };
 
-export default MyComponent;
+export default Refrigerator;
