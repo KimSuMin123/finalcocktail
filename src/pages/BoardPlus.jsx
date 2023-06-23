@@ -7,6 +7,7 @@ const BoardPlus = () => {
   return (
     <div>
         <h1>BoardPlus</h1>
+        
     </div>
   );
 };

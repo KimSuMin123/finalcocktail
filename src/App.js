@@ -11,7 +11,7 @@ import Refrigerator from "./pages/refrigerator";
 import Mbtidetail from "./pages/mbtidetail";
 import RecommendStart from "./pages/RecommendStart";
 import IngredientStart from "./pages/IngredientStart";
-import IngredientDetail from "./pages/IngredientDetail";
+
 import Login from "./pages/Login";
 import MbtiTest from "./pages/MbtiTest";
 import Randomdetail from "./pages/Randomdetail";
@@ -37,7 +37,6 @@ function App() {
           <Route path="/Mbtidetail" element={<Mbtidetail />} />
           <Route path="/IngredientStart" element={<IngredientStart />} />
           <Route path="/RecommendStart" element={<RecommendStart />} />
-          <Route path="/IngredientDetail" element={<IngredientDetail />} />
           <Route path="/MbtiTest" element={<MbtiTest />} />
           <Route path="/Randomdetail" element={<Randomdetail />} />
           <Route path="/Board" element={<Board/>}/>
