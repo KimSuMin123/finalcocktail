@@ -3,7 +3,7 @@ import axios from 'axios';
 import Header from './Header';
 import { useNavigate } from 'react-router-dom';
 import BoardPlus from './BoardPlus';
-
+import "../css/Board.css"
 const Board = () => {
   const [data, setData] = useState(null);
   const navigate = useNavigate();
@@ -28,8 +28,9 @@ const Board = () => {
   return (
     <div>
         <Header/>
+        <h1 id = "BoardName">게시판</h1>
       {data ? (
-        <table>
+        <table id="BoardTable">
           <thead>
             <tr>
               <th>Title</th>
@@ -58,7 +59,7 @@ const Board = () => {
       ) : (
         <p>Loading data...</p>
       )}
-      <button onClick={handleBoardPlus}>추가하기</button>
+      <button id="Boardbutton" onClick={handleBoardPlus}>추가하기</button>
     </div>
   );
 };

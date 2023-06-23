@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Header from './Header';
+import Map from './map';
 
 function Randomdetail() {
   const [data, setData] = useState(null);
@@ -21,19 +22,26 @@ function Randomdetail() {
   return (
     <div>
       <Header />
+      <div id="Mbtistart">
+      <h3 id = "MbtistartTitle">Random Result</h3>
       {data ? (
-        <div>
-          <h3>Random Result</h3>
+        <div id="MbtistartTxt1">
+        <div id="MbtistartTxt3">
+        <img id="MbtistartImg" src={data.url} alt="Random Image" />
+        <div id= "mbtimap"><Map/></div>
+          </div>
+          <div id = "MbtistartTxt2">
           <p>Name: {data.name}</p>
           <p>ingredients: {data.ingredients}</p>
           <p>instruction: {data.instruction}</p>
           <p>alcohol: {data.alcohol}</p>
           <p>sweet: {data.sweet}</p>
-          <img src={data.url} alt="Random Image" />
+          </div>
         </div>
       ) : (
-        <p>Loading...</p>
+        <p id="MbtistartTxt">Loading...</p>
       )}
+    </div>
     </div>
   );
 }

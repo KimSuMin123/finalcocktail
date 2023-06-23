@@ -62,7 +62,7 @@ function Main() {
   return (
     <div>
       <Header />
-      <div>
+      <div id= "Search">
         <input
           type="text"
           placeholder="이름으로 검색"
@@ -71,7 +71,7 @@ function Main() {
         />
         <button onClick={handleSearch}>검색</button>
       </div>
-      <div>
+      <div id= "Search1">
         <select onChange={handleAlcoholChange}>
           <option value="">도수 선택</option>
           <option value="1">약</option>

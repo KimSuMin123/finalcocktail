@@ -37,8 +37,9 @@ const BoardPlus = () => {
   };
 
   return (
-    <div>
+    <div id = "ingredientinput1">
       <h2>게시글 쓰기</h2>
+      제목 : 
       <input
         type="text"
         placeholder="Title"
@@ -46,6 +47,7 @@ const BoardPlus = () => {
         onChange={e => setTitle(e.target.value)}
       />
       <br />
+      레시피 :
       <input
         type="text"
         placeholder="Recipe"
@@ -53,6 +55,7 @@ const BoardPlus = () => {
         onChange={e => setRecipe(e.target.value)}
       />
       <br />
+      재료 :
       <input
         type="text"
         placeholder="Ingredients"
@@ -60,6 +63,7 @@ const BoardPlus = () => {
         onChange={e => setRIngredients(e.target.value)}
       />
       <br />
+      이미지 :
       <input
         type="text"
         placeholder="URL"
@@ -67,7 +71,7 @@ const BoardPlus = () => {
         onChange={e => setURL(e.target.value)}
       />
       <br />
-      <button onClick={handleRequest}>글 저장 하기</button>
+      <button id= "JoinButton"onClick={handleRequest}>글 저장 하기</button>
     </div>
   );
 };

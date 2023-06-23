@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header from './Header';
 import axios from 'axios';
+import "../css/Board.css"
 
 function IngredientStart() {
   const navigate = useNavigate();
@@ -66,9 +67,12 @@ function IngredientStart() {
     <div>
       <Header />
       <h1>Cocktail</h1>
-      <table>
+      <div id = "ingredientone">
+      
+      <div id = "ingredienttwo">
+      <table id="BoardTable">
         <thead>
-          <tr>
+          <tr id= "Boardtr">
             <th>술</th>
             <th>과일</th>
             <th>음료</th>
@@ -76,19 +80,19 @@ function IngredientStart() {
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <tr id= "Boardtr">
             <td>소주</td>
             <td>사과</td>
             <td>오렌지쥬스</td>
             <td>아이스크림</td>
           </tr>
-          <tr>
+          <tr id= "Boardtr">
             <td>맥주</td>
             <td>라임</td>
             <td>사과쥬스</td>
             <td>설탕</td>
           </tr>
-          <tr>
+          <tr id= "Boardtr">
             <td>와인</td>
             <td>레몬</td>
             <td>탄산수</td>
@@ -99,8 +103,10 @@ function IngredientStart() {
           </tr>
         </tbody>
       </table>
+      </div>
+     
       {errorMessage && <p>{errorMessage}</p>}
-      <div>
+      <div id = "ingredientinput">
         재료1:
         <input type="text" placeholder="재료1" value={s1} onChange={(e) => sets1(e.target.value)} />
         <br />
@@ -110,10 +116,12 @@ function IngredientStart() {
         재료3:
         <input type="text" placeholder="재료3" value={s3} onChange={(e) => sets3(e.target.value)} />
         <br />
-        <button onClick={handleJoin}>검색하기</button>
+        <button id="LoginButton" onClick={handleJoin}>검색하기</button><br></br>
+        <button id="LoginButton" onClick={handleRandomRecommendation}>검색 결과 중 랜덤 추천</button>
+      </div>
       </div>
       {responseData && (
-        <div>
+        <div id = "tabletwo">
           <table>
             <thead>
               <tr>
@@ -126,6 +134,8 @@ function IngredientStart() {
               </tr>
             </thead>
             <tbody>
+              
+          
               {responseData.map((item) => (
                 <tr key={item.number}>
                   <td>
@@ -140,7 +150,7 @@ function IngredientStart() {
               ))}
             </tbody>
           </table>
-          <button onClick={handleRandomRecommendation}>검색 결과 중 랜덤 추천</button>
+          
           {randomRecommendation && (
             <div>
               <table>
@@ -157,7 +167,7 @@ function IngredientStart() {
                 <tbody>
                   <tr>
                     <td>
-                      <img id="MainImg" src={randomRecommendation.url} alt={randomRecommendation.name} />
+                      <img id="MainImg" src={randomRecommendation.url} alt={randomRecommendation.name}/>
                     </td>
                     <td>{randomRecommendation.name}</td>
                     <td>{randomRecommendation.ingredients}</td>

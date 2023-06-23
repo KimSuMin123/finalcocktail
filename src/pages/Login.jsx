@@ -55,7 +55,7 @@ const Join = () => {
         value={password}
         onChange={e => setPassword(e.target.value)}
       /><br/>
-      <button onClick={handleLogin} id = "LoginButton">로그인</button>
+      <button onClick={handleLogin} id = "SignupButton">로그인</button>
       <button onClick={handleJoin} id = "SignupButton">회원가입</button>
     </div>
     </div>
