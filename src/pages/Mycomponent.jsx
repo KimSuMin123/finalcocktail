@@ -18,16 +18,16 @@ const Mycomponent = () => {
       .map(key => `${key}=${encodeURIComponent(userData[key])}`)
       .join('&');
 
-    const url = `http://3.39.190.51:8080/cocktail/ingredientsOr?${queryString}`;
+    const url = `http://3.39.190.51:8080/cocktail/ingredientsContain?${queryString}`;
 
-    axios.post(url)
+    axios.get(url)
       .then(response => {
-        // 회원가입 성공 처리
-        console.log('회원가입 성공:', response.data);
+        // 재료처리 성공 처리
+        console.log('재료처리 성공:', response.data);
       })
       .catch(error => {
-        // 회원가입 실패 처리
-        console.error('회원가입 실패:', error.response);
+        // 재료처리 실패 처리
+        console.error('재료처리 실패:', error.response);
         if (error.response.status === 401) {
           setErrorMessage('올바른 인증 정보를 제공해야 합니다.');
           // 인증 오류 처리 로직 추가
@@ -40,26 +40,26 @@ const Mycomponent = () => {
 
   return (
     <div>
-      <h2>회원가입</h2>
+      <h2>재료처리</h2>
       {errorMessage && <p>{errorMessage}</p>}
-      S1: 
+      아이디 : 
       <input
         type="text"
-        placeholder="S1"
+        placeholder="아이디"
         value={s1}
         onChange={e => sets1(e.target.value)}
       /><br/>
-      S2: 
+      비밀번호 : 
       <input
         type="text"
-        placeholder="S2"
+        placeholder="비밀번호"
         value={s2}
         onChange={e => sets2(e.target.value)}
       /><br/>
-      S3: 
+      이름 : 
       <input
         type="text"
-        placeholder="S3"
+        placeholder="이름"
         value={s3}
         onChange={e => sets3(e.target.value)}
       /><br/>
@@ -68,4 +68,5 @@ const Mycomponent = () => {
   );
 };
 
-export default Mycomponent;
+export default Mycomponent ;
+
