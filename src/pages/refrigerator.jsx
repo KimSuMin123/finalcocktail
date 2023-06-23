@@ -1,12 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Header from './Header';
+import { useNavigate } from 'react-router-dom';
 
 const Refrigerator = () => {
   const [data, setData] = useState(null);
   const token = localStorage.getItem('token');
   const userId = localStorage.getItem('UserId'); // Fetch userId from localStorage
+  const navigate = useNavigate();
 
+  const handleIngredientPlus= () => {
+    navigate("/IngredientPlus");
+  };
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -36,14 +41,15 @@ const Refrigerator = () => {
             <tr key={item.id}>
               <tr><img src={item.url} width="20px"></img></tr>
               <tr>{item.productName}</tr>
-              <tr>{item.price}</tr>
             </tr>
           ))}
+          <button onClick={handleIngredientPlus}>재료 추가하기</button>
         </tbody>
       </table>
-    ) : (
+    ): (
       <p>로그인 후 이용해주세요!!</p>
     )}
+    
   </div>
   );
 };

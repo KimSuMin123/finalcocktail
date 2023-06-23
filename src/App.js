@@ -18,6 +18,8 @@ import Randomdetail from "./pages/Randomdetail";
 import Header from "./pages/Header";
 import Board from "./pages/Board";
 import Mycomponent from "./pages/Mycomponent";
+import BoardPlus from "./pages/BoardPlus";
+import IngredientPlus from "./pages/IngredientPlus";
 
 
 function App() {
@@ -40,6 +42,8 @@ function App() {
           <Route path="/MbtiTest" element={<MbtiTest />} />
           <Route path="/Randomdetail" element={<Randomdetail />} />
           <Route path="/Board" element={<Board/>}/>
+          <Route path="/BoardPlus" element={<BoardPlus/>}/>
+          <Route path="/IngredientPlus" element={<IngredientPlus/>}/>
         </Routes>
       </BrowserRouter>
     </div>

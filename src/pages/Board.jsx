@@ -2,9 +2,16 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Header from './Header';
 import Mycomponent from './Mycomponent';
+import { useNavigate } from 'react-router-dom';
+import BoardPlus from './BoardPlus';
 
 const Board = () => {
   const [data, setData] = useState(null);
+  const navigate = useNavigate();
+
+  const handleBoardPlus= () => {
+    navigate("/BoardPlus");
+  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -52,6 +59,7 @@ const Board = () => {
       ) : (
         <p>Loading data...</p>
       )}
+      <button onClick={handleBoardPlus}>추가하기</button>
     </div>
   );
 };
