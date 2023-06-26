@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import Header from './Header';
 
 const BoardPlus = () => {
   const [title, setTitle] = useState('');
@@ -37,7 +38,9 @@ const BoardPlus = () => {
   };
 
   return (
-    <div id = "ingredientinput1">
+    <div>
+      <Header/>
+      <div id = "ingredientinput6">
       <h2>게시글 쓰기</h2>
       제목 : 
       <input
@@ -73,6 +76,8 @@ const BoardPlus = () => {
       <br />
       <button id= "JoinButton"onClick={handleRequest}>글 저장 하기</button>
     </div>
+    </div>
+      
   );
 };
 

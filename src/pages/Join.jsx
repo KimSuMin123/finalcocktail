@@ -39,10 +39,10 @@ const Join = () => {
         // 회원가입 실패 처리
         console.error('회원가입 실패:', error.response);
         if (error.response.status === 401) {
-          setErrorMessage('올바른 인증 정보를 제공해야 합니다.');
+          setErrorMessage('이미 같은 아이디를 가진 유저가 있습니다.');
           // 인증 오류 처리 로직 추가
         } else {
-          setErrorMessage('서버 오류: 요청에 문제가 있습니다.');
+          setErrorMessage('이미 같은 아이디를 가진 유저가 있습니다.');
           // 기타 서버 오류 처리 로직 추가
         }
       });

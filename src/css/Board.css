@@ -68,3 +68,13 @@
 #Boardtr{
     border: solid 1px#8DE529;
 }
+#ingredientinput6{
+    font-size: 20px;
+   background-color: #202020;
+   font-family: 'PFStardust';
+    color: ivory;
+    width: 500px;
+    height: 500px;
+    text-align: center;
+    margin-left: 600px;
+}
